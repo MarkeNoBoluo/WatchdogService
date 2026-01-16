@@ -1,41 +1,18 @@
-# Prerequisites
-*.d
+# 忽略build文件夹及所有文件
+build
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+# 忽略.vs文件夹及所有文件
+.vs
 
-# Precompiled Headers
-*.gch
-*.pch
+# 忽略bin文件夹及所有文件
+bin
 
-# Linker files
-*.ilk
+# 忽略第三方库中所有文件
+third_party
+!third_party/
 
-# Debugger Files
-*.pdb
+# 忽略out文件夹及所有文件
+out
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
-
-# debug information files
-*.dwo
+# 忽略.user 用户编译配置文件
+*.*.user
