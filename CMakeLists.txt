@@ -84,6 +84,8 @@ else()
     add_compile_options(-fPIC)
 endif()
 
+# 添加日志库
+add_subdirectory(third_party/spdlog)
 
 # 添加子目录
 add_subdirectory(src)

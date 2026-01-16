@@ -5,6 +5,7 @@
 #include <Windows.h>
 #include <tchar.h>
 #include <strsafe.h>
+#include <iostream>
 
 /*
 📖 知识点：为什么需要这些头文件？
@@ -32,6 +33,9 @@ VOID WINAPI ServiceCtrlHandle(DWORD dwControl);
 // 服务工作函数
 DWORD WINAPI ServiceWorkerThread(LPVOID lpParam);
 void ReportServiceStatus(DWORD dwCurrentState, DWORD dwWin32ExitCode, DWORD dwWaitHint);
+void StartLogger();// 启动日志
+void StopLogger();// 停止日志
+
 
 
 #endif // WATCHDOG_SERVICE_H

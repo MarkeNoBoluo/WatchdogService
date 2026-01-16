@@ -2,6 +2,7 @@
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/include
     ${CMAKE_CURRENT_BINARY_DIR}/include  # 用于生成的头文件
+    ${CMAKE_CURRENT_SOURCE_DIR}/third_party/spdlog/include
 )
 
 # 源文件分组
@@ -18,7 +19,16 @@ set(HEADERS
 )
 
 # 添加可执行目标
-add_executable(WatchdogService ${SOURCES} ${HEADERS})
+add_executable(WatchdogService ${SOURCES} ${HEADERS}
+    include/Logger.h
+    source/Logger.cpp)
+
+# 链接 spdlog
+target_link_libraries(WatchdogService PRIVATE spdlog::spdlog)
+
+# 如果需要线程支持
+target_link_libraries(WatchdogService PRIVATE Threads::Threads)
+find_package(Threads REQUIRED)
 
 # 设置目标属性
 set_target_properties(WatchdogService PROPERTIES
