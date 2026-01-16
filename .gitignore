@@ -7,9 +7,8 @@ build
 # 忽略bin文件夹及所有文件
 bin
 
-# 忽略第三方库中所有文件
+# 忽略第三方库及所有文件
 third_party
-!third_party/
 
 # 忽略out文件夹及所有文件
 out
